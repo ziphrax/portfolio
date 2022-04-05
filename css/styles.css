@@ -1,0 +1,217 @@
+html {
+    padding: 4rem;
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 5rem;
+    line-height: 1.7;
+    color: #555;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.header {
+    position: relative;
+    background-image: linear-gradient(to top, rgba(51, 66, 151, 0.8), rgb(64, 75, 195)), url('../images/hero.jpg');
+    background-size: cover;
+    background-position: center;
+    backface-visibility: hidden;
+    height: 95vh;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 85%, 0 85%);
+    animation-fill-mode: forwards;
+    animation-name: headerGrow;
+    animation-duration: 1s;
+    animation-timing-function: ease-in;
+    animation-delay: 0.5s;
+}
+
+.header>.header__text-box {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -50%;
+    margin-top: -40%;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    text-transform: uppercase;
+}
+
+.header>.header__text-box>h1 {
+    color: #fff;
+    font-size: 7rem;
+    letter-spacing: 2rem;
+    backface-visibility: hidden;
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+}
+
+.header>.header__text-box>.header__download-button {
+    position: absolute;
+    margin-top: 8rem;
+    left: 50%;
+    margin-left: -29%;
+    font-size: 3rem;
+    width: 50vw;
+    backface-visibility: hidden;
+    animation-name: moveInBottom;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+}
+
+.header>.header__text-box>h2 {
+    color: #fff;
+    font-size: 4rem;
+    letter-spacing: 2rem;
+    font-weight: 500;
+    backface-visibility: hidden;
+    animation-name: moveInRight;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+}
+
+.button {
+    border-radius: 1rem;
+}
+
+.button[data-type="naked"] {
+    display: block;
+    border: 1px solid #fff;
+    color: #fff;
+    text-decoration: underline;
+}
+
+
+/* .section {
+    height: 95vh;
+} */
+
+main .section {
+    margin-top: 8rem;
+    height: 95vh;
+}
+
+main .section:nth-of-type(2n) {
+    position: relative;
+    background-color: rgb(64, 75, 195);
+    backface-visibility: hidden;
+    color: #fff;
+    padding-top: 20vh;
+    clip-path: polygon(0 0, 50% 15%, 100% 0, 100% 85%, 50% 100%, 0 85%);
+}
+
+main .section:nth-of-type(2n) h2,
+main .section:nth-of-type(2n) p {
+    color: #fff;
+}
+
+.section>h2 {
+    text-align: center;
+}
+
+.section>p {
+    font-size: 1rem;
+    text-align: justify;
+}
+
+.section.about-me {}
+
+.footer {
+    position: relative;
+    backface-visibility: hidden;
+    height: 95vh;
+    margin-top: 8rem;
+    background-color: rgb(64, 75, 195);
+    color: #fff;
+    clip-path: polygon(0 0, 50% 15%, 100% 0, 100% 100%, 0 100%);
+}
+
+.footer>div.copyright {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -50%;
+    margin-top: 0;
+    width: 100%;
+    font-size: 5rem;
+    text-align: center;
+    color: #fff;
+}
+
+@keyframes moveInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-10rem);
+    }
+    80% {
+        transform: translateX(1rem);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(10rem);
+    }
+    80% {
+        transform: translateX(-1rem);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(3rem);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes headerGrow {
+    0% {
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 85%, 0 85%);
+    }
+    100% {
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
+    }
+}
